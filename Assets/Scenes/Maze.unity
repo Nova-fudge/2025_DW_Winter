@@ -552,7 +552,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.28, z: 0}
+  m_LocalPosition: {x: 0, y: 1.28, z: 74.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1115,7 +1115,7 @@ Transform:
   m_GameObject: {fileID: 1692536682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.28, z: 0}
+  m_LocalPosition: {x: 0, y: 1.28, z: 74.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1136,9 +1136,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1692536682}
   playerRigid: {fileID: 1692536689}
-  speed: 1
-  maxVelocity: 0
-  currentVelocity: 0
+  speed: 50
+  maxZVelocity: 5
+  minZVelocity: -5
+  currentZVelocity: 0
+  maxXVelocity: 5
+  minXVelocity: -5
+  currentXVelocity: 0
 --- !u!54 &1692536689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1147,8 +1151,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692536682}
   serializedVersion: 4
-  m_Mass: 1.5
-  m_Drag: 0
+  m_Mass: 1.7
+  m_Drag: 3
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
