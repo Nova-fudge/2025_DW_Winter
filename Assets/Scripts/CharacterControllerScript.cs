@@ -7,6 +7,7 @@ public class CharacterControllerScript : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 12f;
+    public float runningSpeed = 20f;
 
 
     void Update()
@@ -17,5 +18,10 @@ public class CharacterControllerScript : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(move * speed * runningSpeed * Time.deltaTime);
+        }
     }
 }
