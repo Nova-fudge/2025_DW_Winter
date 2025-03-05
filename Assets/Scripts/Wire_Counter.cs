@@ -2,25 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Wire_Counter : MonoBehaviour
 {
     public List<Transform> wire;
     public List<Transform> end;
+    public List<float> targetVals;
+    public List<TextMeshProUGUI> targetText;
 
-    public float wire1;
-    public float wire2;
-    public float wire3;
-    public float wire4;
-    public float pointTotal;
+    float wire1;
+    float wire2;
+    float wire3;
+    float wire4;
+    float pointTotal;
 
-    public bool notAllConnected = true;
+    int chosenTarget;
+    public float pointTarget;
+
+    public bool allConnected = false;
 
     public Slider sliderFill;
 
+    private void Start()
+    {
+        chosenTarget = Random.Range(0, 3);
+        pointTarget = targetVals[chosenTarget];
+        targetText[chosenTarget].color = Color.red;
+    }
+
     void Update()
     {
-        notAllConnected = false;
+        allConnected = true;
 
         //Wire 1 connections
         if (wire[0].position == end[0].position)
@@ -34,7 +47,7 @@ public class Wire_Counter : MonoBehaviour
         else
         {
             wire1 = 0;
-            notAllConnected = true;
+            allConnected = false;
         }
 
         //Wire 2 connections
@@ -49,7 +62,7 @@ public class Wire_Counter : MonoBehaviour
         else
         {
             wire2 = 0;
-            notAllConnected = true;
+            allConnected = false;
         }
 
         //Wire 3 connections
@@ -64,7 +77,7 @@ public class Wire_Counter : MonoBehaviour
         else
         {
             wire3 = 0;
-            notAllConnected = true;
+            allConnected = false;
         }
 
         //Wire 4 connections
@@ -79,7 +92,7 @@ public class Wire_Counter : MonoBehaviour
         else
         {
             wire4 = 0;
-            notAllConnected = true;
+            allConnected = false;
         }
 
         totalPoints();
@@ -89,5 +102,8 @@ public class Wire_Counter : MonoBehaviour
     {
         pointTotal = wire1 + wire2 + wire3 + wire4;
         sliderFill.value = pointTotal;
+
+        if (allConnected && pointTotal == pointTarget)
+            Debug.Log("SUCCESS");
     }
 }

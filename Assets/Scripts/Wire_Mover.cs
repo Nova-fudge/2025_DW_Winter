@@ -7,6 +7,7 @@ public class Wire_Mover : MonoBehaviour
     public Transform startPos;
 
     public bool overEndPoint;
+    public bool wireCollision = false;
 
     private void OnMouseDrag()
     {
@@ -21,6 +22,8 @@ public class Wire_Mover : MonoBehaviour
             transform.position = collision.gameObject.transform.position;
             overEndPoint = true;
         }
+
+        wireCollision = collision.CompareTag("Wire");
     }
 
     private void OnTriggerExit(Collider other)
@@ -30,7 +33,7 @@ public class Wire_Mover : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!overEndPoint)
+        if (!overEndPoint || wireCollision)
             transform.position = startPos.position;
     }
 }
