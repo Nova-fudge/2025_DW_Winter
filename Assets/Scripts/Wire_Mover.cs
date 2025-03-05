@@ -23,12 +23,14 @@ public class Wire_Mover : MonoBehaviour
             overEndPoint = true;
         }
 
-        wireCollision = collision.CompareTag("Wire");
+        if (collision.CompareTag("Wire"))
+            wireCollision = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         overEndPoint = false;
+        wireCollision = false;
     }
 
     private void OnMouseUp()
