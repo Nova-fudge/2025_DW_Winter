@@ -6,6 +6,8 @@ TagManager:
   tags:
   - endPos
   - Wire
+  - Card space
+  - Card
   layers:
   - Default
   - TransparentFX
