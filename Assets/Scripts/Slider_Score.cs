@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Slider_Score : MonoBehaviour
 {
     public Slide_Rotator board;
     public List<Slide_Target> target;
+    public TextMeshProUGUI movesDisplay;
 
     public float moveTarget;
     public float movesUsed;
@@ -34,9 +36,11 @@ public class Slider_Score : MonoBehaviour
             else if (movesUsed == moveTarget - 2)
                 Debug.Log("Great work! Nicely done!");
             else if (movesUsed == moveTarget - 1 || movesUsed == moveTarget)
-                Debug.Log("Good job.");
+                Debug.Log("Good job!");
             else if (movesUsed > moveTarget)
                 Debug.Log("You solved the puzzle.");
         }
+
+        movesDisplay.text = "Moves used: " + movesUsed.ToString();
     }
 }
