@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TrapPopups : MonoBehaviour
 {
@@ -28,6 +24,15 @@ public class TrapPopups : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
             Time.timeScale = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && inTrap)
+        {
+            canvas.enabled = false;
+            trapCanvas.enabled = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1;
         }
     }
 

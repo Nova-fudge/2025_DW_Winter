@@ -105,6 +105,10 @@ public class Wire_Counter : MonoBehaviour
 
         //WIN CONDITION HERE.
         if (allConnected && pointTotal == pointTarget)
+        {
             Debug.Log("SUCCESS");
+
+        }
+
     }
 }
