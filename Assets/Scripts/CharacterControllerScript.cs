@@ -12,16 +12,19 @@ public class CharacterControllerScript : MonoBehaviour
 
     public Canvas canvas;
 
+    public Box_Detect respawnBox;
+
     void Start()
     {
-        canvas.enabled = false;
-        Debug.Log(":( i have a value that is null");
-        
-        if (PlayerLocation.previousPlayerTransform != null)
+
+        if (respawnBox.hasCollided)
         {
             Debug.Log("wow i have a value that is not null");
             this.transform.position = sceneSwitcher.LoadLocation().position;
         }
+
+        canvas.enabled = false;
+        Debug.Log(":( i have a value that is null");
 
     }
     void Update()
