@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TrapPopups : MonoBehaviour
 {
 
-    public GameObject trapText;
+    public Canvas canvas;
     // if this script is on an object with a collider display the Gui
-    void OnTriggerEnter()
+    void Start()
     {
-        Instantiate(trapText);
+        canvas.enabled = false;
     }
 
-
-    void OnTriggerExit()
+    void OnTriggerEnter(Collider collider)
     {
-        Destroy(trapText);
+        canvas.enabled = true;
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        canvas.enabled = false;
     }
 }

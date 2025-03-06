@@ -9,7 +9,12 @@ public class CharacterControllerScript : MonoBehaviour
     public float speed = 12f;
     public float runningSpeed = 20f;
 
+    public Canvas canvas;
 
+    void Start()
+    {
+        canvas.enabled = false;
+    }
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
