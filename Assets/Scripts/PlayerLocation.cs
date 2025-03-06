@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class PlayerLocation
 {
-    public static Transform previousPlayerTransform { get; set; }
+    public Vector3 previousPlayerTransform { get; set; }
 
 }
