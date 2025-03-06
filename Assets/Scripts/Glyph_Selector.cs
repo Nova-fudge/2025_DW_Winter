@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,21 @@ public class Glyph_Selector : MonoBehaviour
         glyphDisplay[4].sprite = glyphList[currentIndex[4]];
         glyphDisplay[5].sprite = glyphList[currentIndex[5]];
         glyphDisplay[6].sprite = glyphList[currentIndex[6]];
+    }
+
+    private void Update()
+    {
+        //WIN CONDITION HERE.
+        if (currentIndex[0] == 18 &&
+            currentIndex[1] == 4 &&
+            currentIndex[2] == 19 &&
+            currentIndex[3] == 19 &&
+            currentIndex[4] == 17 &&
+            currentIndex[5] == 0 &&
+            currentIndex[6] == 15)
+        {
+            Debug.Log("SUCCESS");
+        }
     }
 
     public void nextImage(int index)
