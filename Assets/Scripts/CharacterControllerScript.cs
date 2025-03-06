@@ -30,6 +30,7 @@ public class CharacterControllerScript : MonoBehaviour
         DontDestroyOnLoad(transform.gameObject);
         canvas.enabled = false;
         Debug.Log(":( i have a value that is null");
+        Cursor.visible = false;
     }
 
     private void Start()

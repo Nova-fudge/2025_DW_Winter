@@ -15,6 +15,15 @@ public class Slider_Score : MonoBehaviour
     float hitCount;
     public bool allHit = false;
 
+    public Canvas winScreen;
+    public TextMeshProUGUI winBarks;
+
+    void Start()
+    {
+        winScreen.enabled = false;
+        winBarks.enabled = false;
+    }
+
     void Update()
     {
         movesUsed = board.movesUsed;
@@ -29,16 +38,18 @@ public class Slider_Score : MonoBehaviour
         //WIN CONDITION HERE.
         if (hitCount > 5)
         {
+            winScreen.enabled = true;
+            winBarks.enabled = true;
             allHit = true;
             board.puzzleSolved = true;
             if (movesUsed == moveTarget - 3)
-                Debug.Log("SUCCESS! PERFECT SCORE!");
+                winBarks.text = "SUCCESS! PERFECT SCORE!";
             else if (movesUsed == moveTarget - 2)
-                Debug.Log("Great work! Nicely done!");
+                winBarks.text = "Great work! Nicely done!";
             else if (movesUsed == moveTarget - 1 || movesUsed == moveTarget)
-                Debug.Log("Good job!");
+                winBarks.text = "Good job!";
             else if (movesUsed > moveTarget)
-                Debug.Log("You solved the puzzle.");
+                winBarks.text = "You solved the puzzle.";
         }
 
         movesDisplay.text = "Moves used: " + movesUsed.ToString();
