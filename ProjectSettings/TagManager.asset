@@ -8,6 +8,7 @@ TagManager:
   - Wire
   - Card space
   - Card
+  - Canvas
   layers:
   - Default
   - TransparentFX
