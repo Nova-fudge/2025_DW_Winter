@@ -6,12 +6,14 @@ public class Slide_Rotator : MonoBehaviour
 {
     public Rigidbody player;
     bool canRotate = false;
+    public bool puzzleSolved = false;
 
     Vector3 currentAngle;
     Vector3 targetAngle;
     float rotateTimer = 0f;
 
     public float rotateSpeed = 1f;
+    public float movesUsed = 0f;
 
     private void Start()
     {
@@ -21,16 +23,18 @@ public class Slide_Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && canRotate)
+        if (Input.GetKeyDown(KeyCode.A) && canRotate && !puzzleSolved)
         {
             targetAngle.z = currentAngle.z + 90;
             rotateTimer = 0f;
+            movesUsed++;
         }
         
-        if (Input.GetKeyDown(KeyCode.D) && canRotate)
+        if (Input.GetKeyDown(KeyCode.D) && canRotate && !puzzleSolved)
         {
             targetAngle.z = currentAngle.z - 90;
             rotateTimer = 0f;
+            movesUsed++;
         }
 
         rotateTimer += rotateSpeed * Time.deltaTime;

@@ -6,13 +6,14 @@ using UnityEngine;
 public class Slide_Target : MonoBehaviour
 {
     public Material hit;
+    public bool amHit = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             gameObject.GetComponent<MeshRenderer>().material = hit;
-            Debug.Log("I AM HIT");
+            amHit = true;
         }
     }
 }

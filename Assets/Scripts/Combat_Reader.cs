@@ -17,7 +17,6 @@ public class Combat_Reader : MonoBehaviour
 
         if (placed)
         {
-            Debug.Log("PLACED");
             readFloats = card.gameObject.GetComponent<Combat_Card>();
             HP = readFloats.HP;
             Damage = readFloats.Damage;

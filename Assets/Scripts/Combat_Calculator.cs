@@ -49,5 +49,9 @@ public class Combat_Calculator : MonoBehaviour
             botText.text = botRow.ToString() + "/" + botTarget.ToString();
         else
             botText.text = "0/" + botTarget.ToString();
+
+        //WIN CONDITION HERE.
+        if (topRow == topTarget && botRow == botTarget)
+            Debug.Log("SUCCESS");
     }
 }

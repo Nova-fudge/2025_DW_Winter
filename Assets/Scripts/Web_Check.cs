@@ -31,6 +31,8 @@ public class Web_Check : MonoBehaviour
         Vector3 sixToSeven = cube_6.position - cube_7.position;
         Vector3 sevenToEight = cube_7.position - cube_8.position;
         Vector3 eightToOne = cube_8.position - cube_1.position;
+
+        //WIN CONDITION HERE.
         if (
             oneToTwo.magnitude < 5 &&
             twoToThree.magnitude < 5 &&
@@ -40,6 +42,9 @@ public class Web_Check : MonoBehaviour
             sixToSeven.magnitude < 5 &&
             sevenToEight.magnitude < 5 &&
             eightToOne.magnitude < 5)
+        {
             floorMat.material = happyFloor;
+            Debug.Log("SUCCESS");
+        }
     }
 }

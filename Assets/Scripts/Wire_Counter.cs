@@ -103,6 +103,7 @@ public class Wire_Counter : MonoBehaviour
         pointTotal = wire1 + wire2 + wire3 + wire4;
         sliderFill.value = pointTotal;
 
+        //WIN CONDITION HERE.
         if (allConnected && pointTotal == pointTarget)
             Debug.Log("SUCCESS");
     }
