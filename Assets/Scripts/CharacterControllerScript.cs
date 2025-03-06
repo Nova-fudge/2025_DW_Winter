@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterControllerScript : MonoBehaviour
 {
     public CharacterController controller;
+    public Scene_Switcher sceneSwitcher;
 
     public float speed = 12f;
     public float runningSpeed = 20f;
@@ -14,6 +15,14 @@ public class CharacterControllerScript : MonoBehaviour
     void Start()
     {
         canvas.enabled = false;
+        Debug.Log(":( i have a value that is null");
+        
+        if (PlayerLocation.previousPlayerTransform != null)
+        {
+            Debug.Log("wow i have a value that is not null");
+            this.transform.position = sceneSwitcher.LoadLocation().position;
+        }
+
     }
     void Update()
     {
@@ -28,5 +37,8 @@ public class CharacterControllerScript : MonoBehaviour
         {
             controller.Move(move * speed * runningSpeed * Time.deltaTime);
         }
+
+        sceneSwitcher.SaveLocation(this.transform);
+
     }
 }
