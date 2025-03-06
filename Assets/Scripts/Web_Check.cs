@@ -16,6 +16,13 @@ public class Web_Check : MonoBehaviour
     public LineRenderer lineMat;
     public Material happyLine;
 
+    public Canvas winScreen;
+
+    private void Start()
+    {
+        winScreen.enabled = false;
+    }
+
     void Update()
     {
         Vector3 oneToTwo = cube_1.position - cube_2.position;
@@ -39,7 +46,7 @@ public class Web_Check : MonoBehaviour
             eightToOne.magnitude < 5)
         {
             lineMat.material = happyLine;
-            Debug.Log("SUCCESS");
+            winScreen.enabled = true;
         }
     }
 }
