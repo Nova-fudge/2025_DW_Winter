@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour
 {
+    public static CharacterControllerScript Instance;
+
     public CharacterController controller;
     public Scene_Switcher sceneSwitcher;
 
@@ -15,19 +17,34 @@ public class CharacterControllerScript : MonoBehaviour
 
     public Box_Detect respawnBox;
 
+    public GameObject dontDestroy;
+
+    private bool hasRun = false;
+
+    private Vector3 previousPlayerPos;
+
     void Awake()
     {
+        if (Instance != null)
+            Destroy(gameObject);
+        DontDestroyOnLoad(transform.gameObject);
         canvas.enabled = false;
         Debug.Log(":( i have a value that is null");
     }
 
-    void Start()
+    private void Start()
     {
-        sceneSwitcher.LoadLocation();
+        Instance = this;
     }
+
     void Update()
     {
-        sceneSwitcher.SaveLocation(this.transform);
+        Debug.Log("Holder is " + previousPlayerPos);
+        if (hasRun == false)
+        {
+            previousPlayerPos = transform.position;
+            hasRun = true;
+        }
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

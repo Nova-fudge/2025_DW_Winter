@@ -50,15 +50,4 @@ public class Scene_Switcher : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Web_Puzzle");
     }
-
-    public void SaveLocation(Transform currentLocation)
-    {
-        PlayerLocation.previousPlayerTransform = currentLocation;
-    }
-    public Transform LoadLocation()
-    {
-        Transform currentLocation;
-        currentLocation = PlayerLocation.previousPlayerTransform;
-        return currentLocation;
-    }
 }
