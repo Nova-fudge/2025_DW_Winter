@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterControllerScript : MonoBehaviour
@@ -16,12 +17,13 @@ public class CharacterControllerScript : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("wow i have a value that is not null");
-        this.transform.position = Scene_Switcher.
-
         canvas.enabled = false;
         Debug.Log(":( i have a value that is null");
+    }
 
+    void Start()
+    {
+        sceneSwitcher.LoadLocation();
     }
     void Update()
     {
