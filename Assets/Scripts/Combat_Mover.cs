@@ -10,8 +10,13 @@ public class Combat_Mover : MonoBehaviour
     public bool cardCollision = false;
     public bool placed = true;
 
+    public bool isStationary = false;
+
     private void OnMouseDrag()
     {
+        if (isStationary)
+            return;
+
         placed = false;
         float distance_to_screen = Camera.main.WorldToScreenPoint(transform.position).z;
         transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));

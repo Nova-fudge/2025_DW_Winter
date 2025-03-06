@@ -27,15 +27,39 @@ public class Combat_Calculator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        topCol1 = cardSpace[0].HP - cardSpace[1].Damage;
-        topCol2 = cardSpace[2].HP - cardSpace[3].Damage;
-        topCol3 = cardSpace[4].HP - cardSpace[5].Damage;
-        topCol4 = cardSpace[6].HP - cardSpace[7].Damage;
+        if (cardSpace[1].Damage != 0)
+            topCol1 = cardSpace[0].HP - cardSpace[1].Damage;
+        else
+            topCol1 = 0;
+        if (cardSpace[3].Damage != 0)
+            topCol2 = cardSpace[2].HP - cardSpace[3].Damage;
+        else
+            topCol2 = 0;
+        if (cardSpace[5].Damage != 0)
+            topCol3 = cardSpace[4].HP - cardSpace[5].Damage;
+        else
+            topCol3 = 0;
+        if (cardSpace[7].Damage != 0)
+            topCol4 = cardSpace[6].HP - cardSpace[7].Damage;
+        else
+            topCol4 = 0;
 
-        botCol1 = cardSpace[1].HP - cardSpace[0].Damage;
-        botCol2 = cardSpace[3].HP - cardSpace[2].Damage;
-        botCol3 = cardSpace[5].HP - cardSpace[4].Damage;
-        botCol4 = cardSpace[7].HP - cardSpace[6].Damage;
+        if (cardSpace[0].Damage != 0)
+            botCol1 = cardSpace[1].HP - cardSpace[0].Damage;
+        else
+            botCol1 = 0;
+        if (cardSpace[2].Damage != 0)
+            botCol2 = cardSpace[3].HP - cardSpace[2].Damage;
+        else
+            botCol2 = 0;
+        if (cardSpace[4].Damage != 0)
+            botCol3 = cardSpace[5].HP - cardSpace[4].Damage;
+        else
+            botCol3 = 0;
+        if (cardSpace[6].Damage != 0)
+            botCol4 = cardSpace[7].HP - cardSpace[6].Damage;
+        else
+            botCol4 = 0;
 
         topRow = -1 * (topCol1 + topCol2 + topCol3 + topCol4);
         botRow = -1 * (botCol1 + botCol2 + botCol3 + botCol4);
