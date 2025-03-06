@@ -24,11 +24,14 @@ public class Wire_Counter : MonoBehaviour
 
     public Slider sliderFill;
 
+    public Canvas winScreen;
+
     private void Start()
     {
         chosenTarget = Random.Range(0, 3);
         pointTarget = targetVals[chosenTarget];
         targetText[chosenTarget].color = Color.green;
+        winScreen.enabled = false;
     }
 
     void Update()
@@ -107,7 +110,7 @@ public class Wire_Counter : MonoBehaviour
         if (allConnected && pointTotal == pointTarget)
         {
             Debug.Log("SUCCESS");
-
+            winScreen.enabled = true;
         }
 
     }

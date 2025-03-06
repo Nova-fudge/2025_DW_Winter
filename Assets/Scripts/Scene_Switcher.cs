@@ -3,6 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Switcher : MonoBehaviour
 {
+    public Transform currentPlayerTransform;
+    public Transform previousPlayerTransform;
+
+    public void PlayerLastLocation()
+    {
+        previousPlayerTransform = currentPlayerTransform;
+        Debug.Log("Player Location Stored At:" + previousPlayerTransform.ToString());
+    }
+    public void PlayerNewLocation()
+    {
+        currentPlayerTransform = previousPlayerTransform;
+    }
+
     public void GoToMaze()
     {
         Cursor.lockState = CursorLockMode.Confined;

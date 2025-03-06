@@ -13720,6 +13720,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2121243840}
         m_TargetAssemblyTypeName: Scene_Switcher, Assembly-CSharp
+        m_MethodName: PlayerLastLocation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2121243840}
+        m_TargetAssemblyTypeName: Scene_Switcher, Assembly-CSharp
         m_MethodName: GoToSliderPuzzle
         m_Mode: 1
         m_Arguments:
@@ -30923,6 +30935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8c75ca918d4e245937b5be61223947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPlayerTransform: {fileID: 0}
+  previousPlayerTransform: {fileID: 0}
 --- !u!4 &2121243841
 Transform:
   m_ObjectHideFlags: 0
