@@ -30,7 +30,8 @@ public class Wire_Counter : MonoBehaviour
     {
         chosenTarget = Random.Range(0, 3);
         pointTarget = targetVals[chosenTarget];
-        targetText[chosenTarget].color = Color.green;
+        targetText[chosenTarget].color = new Color(1, 0.7725491f, 0.1098039f);
+        targetText[chosenTarget].fontSize = 16;
         winScreen.enabled = false;
     }
 
