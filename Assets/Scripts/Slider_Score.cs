@@ -7,7 +7,7 @@ public class Slider_Score : MonoBehaviour
     public Slide_Rotator board;
     public List<Slide_Target> target;
 
-    public float maxMoves;
+    public float moveTarget;
     public float movesUsed;
     public List<bool> targetsHit;
     float hitCount;
@@ -25,17 +25,17 @@ public class Slider_Score : MonoBehaviour
         }
 
         //WIN CONDITION HERE.
-        if (hitCount > 5 && movesUsed <= maxMoves)
+        if (hitCount > 5)
         {
             allHit = true;
             board.puzzleSolved = true;
-            if (movesUsed == 12)
+            if (movesUsed == moveTarget - 3)
                 Debug.Log("SUCCESS! PERFECT SCORE!");
-            else if (movesUsed == 13)
+            else if (movesUsed == moveTarget - 2)
                 Debug.Log("Great work! Nicely done!");
-            else if (movesUsed == 14)
+            else if (movesUsed == moveTarget - 1 || movesUsed == moveTarget)
                 Debug.Log("Good job.");
-            else if (movesUsed == 15)
+            else if (movesUsed > moveTarget)
                 Debug.Log("You solved the puzzle.");
         }
     }
