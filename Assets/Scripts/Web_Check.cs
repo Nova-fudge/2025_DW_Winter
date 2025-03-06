@@ -13,13 +13,8 @@ public class Web_Check : MonoBehaviour
     public Transform cube_7;
     public Transform cube_8;
 
-    MeshRenderer floorMat;
-    public Material happyFloor;
-
-    private void Start()
-    {
-        floorMat = GetComponent<MeshRenderer>();
-    }
+    public LineRenderer lineMat;
+    public Material happyLine;
 
     void Update()
     {
@@ -43,7 +38,7 @@ public class Web_Check : MonoBehaviour
             sevenToEight.magnitude < 5 &&
             eightToOne.magnitude < 5)
         {
-            floorMat.material = happyFloor;
+            lineMat.material = happyLine;
             Debug.Log("SUCCESS");
         }
     }
