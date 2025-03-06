@@ -20,6 +20,7 @@ public class Web_Parent : MonoBehaviour
     public Transform selected1;
     public Transform selected2;
     bool swap = false;
+    public float swapTime = 0f;
 
     public List<MeshRenderer> cubeMats;
     public Material selectedMat;
@@ -98,6 +99,24 @@ public class Web_Parent : MonoBehaviour
         if (cubeNum == 8)
             selected1.position = cube_8.position;
 
+        //Move cube into middle as "primed"
+        if (cubeNum == 1)
+            cube_1.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 2)
+            cube_2.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 3)
+            cube_3.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 4)
+            cube_4.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 5)
+            cube_5.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 6)
+            cube_6.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 7)
+            cube_7.position = new Vector3(0, 0.1f, 0);
+        if (cubeNum == 8)
+            cube_8.position = new Vector3(0, 0.1f, 0);
+
         //-1 because lists count from 0 for some reason.
         cubeMats[firstCubeNum - 1].material = selectedMat;
     }
@@ -130,48 +149,57 @@ public class Web_Parent : MonoBehaviour
 
     void swapCubes()
     {
+        swapTime += Time.deltaTime * 10;
+
+        if (swapTime > 1)
+        {
+            //Swap has been completed.
+            swap = true;
+            //Cubes are no longer selected.
+            firstCubeSelected = false;
+            secondCubeSelected = false;
+            //-1 because lists count from 0 for some reason.
+            cubeMats[firstCubeNum - 1].material = baseMat;
+            swapTime = 1;
+        }
+
         //Set the FIRST selected cube to the position of the SECOND selected cube.
         if (firstCubeNum == 1)
-            cube_1.position = selected2.position;
+            cube_1.position = selected2.position * swapTime;
         if (firstCubeNum == 2)
-            cube_2.position = selected2.position;
+            cube_2.position = selected2.position * swapTime;
         if (firstCubeNum == 3)
-            cube_3.position = selected2.position;
+            cube_3.position = selected2.position * swapTime;
         if (firstCubeNum == 4)
-            cube_4.position = selected2.position;
+            cube_4.position = selected2.position * swapTime;
         if (firstCubeNum == 5)
-            cube_5.position = selected2.position;
+            cube_5.position = selected2.position * swapTime;
         if (firstCubeNum == 6)
-            cube_6.position = selected2.position;
+            cube_6.position = selected2.position * swapTime;
         if (firstCubeNum == 7)
-            cube_7.position = selected2.position;
+            cube_7.position = selected2.position * swapTime;
         if (firstCubeNum == 8)
-            cube_8.position = selected2.position;
+            cube_8.position = selected2.position * swapTime;
 
         //Set the SECOND selected cube to the position of the FIRST selected cube.
         if (secondCubeNum == 1)
-            cube_1.position = selected1.position;
+            cube_1.position = selected1.position * swapTime;
         if (secondCubeNum == 2)
-            cube_2.position = selected1.position;
+            cube_2.position = selected1.position * swapTime;
         if (secondCubeNum == 3)
-            cube_3.position = selected1.position;
+            cube_3.position = selected1.position * swapTime;
         if (secondCubeNum == 4)
-            cube_4.position = selected1.position;
+            cube_4.position = selected1.position * swapTime;
         if (secondCubeNum == 5)
-            cube_5.position = selected1.position;
+            cube_5.position = selected1.position * swapTime;
         if (secondCubeNum == 6)
-            cube_6.position = selected1.position;
+            cube_6.position = selected1.position * swapTime;
         if (secondCubeNum == 7)
-            cube_7.position = selected1.position;
+            cube_7.position = selected1.position * swapTime;
         if (secondCubeNum == 8)
-            cube_8.position = selected1.position;
+            cube_8.position = selected1.position * swapTime;
 
-        //Swap has been completed.
-        swap = true;
-        //Cubes are no longer selected.
-        firstCubeSelected = false;
-        secondCubeSelected = false;
-        //-1 because lists count from 0 for some reason.
-        cubeMats[firstCubeNum - 1].material = baseMat;
+        if (swap == true)
+            swapTime = 0;
     }
 }

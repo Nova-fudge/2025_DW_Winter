@@ -28,7 +28,7 @@ public class Wire_Counter : MonoBehaviour
     {
         chosenTarget = Random.Range(0, 3);
         pointTarget = targetVals[chosenTarget];
-        targetText[chosenTarget].color = Color.red;
+        targetText[chosenTarget].color = Color.green;
     }
 
     void Update()

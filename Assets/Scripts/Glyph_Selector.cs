@@ -5,29 +5,29 @@ using UnityEngine.UI;
 
 public class Glyph_Selector : MonoBehaviour
 {
-    public List<Texture> glyphList;
-    public RawImage glyphDisplay;
+    public List<Sprite> glyphList;
+    public Image glyphDisplay;
 
-    int imageID = 0;
+    int index = 0;
 
     void Start()
     {
-        glyphDisplay.texture = glyphList[imageID];
+        glyphDisplay.sprite = glyphList[index];
     }
 
     public void nextImage()
     {
-        if (imageID == glyphList.Count - 1)
-            imageID = -1;
-        imageID += 1;
-        glyphDisplay.texture = glyphList[imageID];
+        if (index == glyphList.Count - 1)
+            index = -1;
+        index += 1;
+        glyphDisplay.sprite = glyphList[index];
     }
 
     public void previousImage()
     {
-        if (imageID == 0)
-            imageID = glyphList.Count;
-        imageID -= 1;
-        glyphDisplay.texture = glyphList[imageID];
+        if (index == 0)
+            index = glyphList.Count;
+        index -= 1;
+        glyphDisplay.sprite = glyphList[index];
     }
 }
