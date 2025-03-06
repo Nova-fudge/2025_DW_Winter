@@ -10,8 +10,11 @@ public class Glyph_Selector : MonoBehaviour
     public List<Image> glyphDisplay;
     public List<int> currentIndex;
 
+    public Canvas winScreen;
+
     void Start()
     {
+        winScreen.enabled = false;
         glyphDisplay[0].sprite = glyphList[currentIndex[0]];
         glyphDisplay[1].sprite = glyphList[currentIndex[1]];
         glyphDisplay[2].sprite = glyphList[currentIndex[2]];
@@ -32,7 +35,7 @@ public class Glyph_Selector : MonoBehaviour
             currentIndex[5] == 0 &&
             currentIndex[6] == 15)
         {
-            Debug.Log("SUCCESS");
+            winScreen.enabled = true;
         }
     }
 
