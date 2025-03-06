@@ -14,14 +14,10 @@ public class CharacterControllerScript : MonoBehaviour
 
     public Box_Detect respawnBox;
 
-    void Start()
+    void Awake()
     {
-
-        if (respawnBox.hasCollided)
-        {
-            Debug.Log("wow i have a value that is not null");
-            this.transform.position = sceneSwitcher.LoadLocation().position;
-        }
+        Debug.Log("wow i have a value that is not null");
+        this.transform.position = Scene_Switcher.
 
         canvas.enabled = false;
         Debug.Log(":( i have a value that is null");
@@ -29,6 +25,8 @@ public class CharacterControllerScript : MonoBehaviour
     }
     void Update()
     {
+        sceneSwitcher.SaveLocation(this.transform);
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -40,8 +38,6 @@ public class CharacterControllerScript : MonoBehaviour
         {
             controller.Move(move * speed * runningSpeed * Time.deltaTime);
         }
-
-        sceneSwitcher.SaveLocation(this.transform);
 
     }
 }
