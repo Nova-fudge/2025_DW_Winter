@@ -9,6 +9,13 @@ public class Scene_Switcher : MonoBehaviour
     public bool doneCipher;
     public bool doneWire;
     public bool doneWeb;
+
+    public GameObject boxCollider;
+    public GameObject boxCollider1;
+    public GameObject boxCollider2;
+    public GameObject boxCollider3;
+    public GameObject boxCollider4;
+    public GameObject boxCollider5;
     public void GoToMaze()
     {
         Cursor.lockState = CursorLockMode.Confined;
