@@ -24,6 +24,13 @@ public class Combat_Calculator : MonoBehaviour
     public float topTarget;
     public float botTarget;
 
+    public Canvas winScreen;
+
+    private void Start()
+    {
+        winScreen.enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -76,6 +83,6 @@ public class Combat_Calculator : MonoBehaviour
 
         //WIN CONDITION HERE.
         if (topRow == topTarget && botRow == botTarget)
-            Debug.Log("SUCCESS");
+            winScreen.enabled = true;
     }
 }
