@@ -33,6 +33,9 @@ public class TrapPopups : MonoBehaviour
             trapMesh.enabled = true;
         }
 
+        if (PlayerLocation.traps[trapID])
+            return;
+
         if (Input.GetKeyDown(KeyCode.Space) && inTrap)
         {
             PlayerLocation.chosenTrapNumber(trapID);
@@ -55,6 +58,9 @@ public class TrapPopups : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        if (PlayerLocation.gameOver)
+            return;
+
         if (PlayerLocation.traps[trapID])
             text.text = "You have already placed a trap here!";
         else
