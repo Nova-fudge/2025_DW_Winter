@@ -57,8 +57,6 @@ public class Slider_Score : MonoBehaviour
             if (puzzleSolved)
                 return;
             puzzleSolved = true;
-            trapCamera.enabled = false;
-            PlayerLocation.enterExitTrap();
             PlayerLocation.DoneSlider();
         }
 

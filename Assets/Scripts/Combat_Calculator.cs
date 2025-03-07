@@ -92,8 +92,6 @@ public class Combat_Calculator : MonoBehaviour
             if (puzzleSolved)
                 return;
             puzzleSolved = true;
-            trapCamera.enabled = false;
-            PlayerLocation.enterExitTrap();
             PlayerLocation.DoneCombat();
         }
     }

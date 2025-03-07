@@ -12,6 +12,7 @@ public class Scene_Switcher : MonoBehaviour
 
     public void GoToMaze()
     {
+        PlayerLocation.enterExitTrap();
         PlayerLocation.trapPlaced();
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -81,5 +82,10 @@ public class Scene_Switcher : MonoBehaviour
         Time.timeScale = 1;
         doneWeb = true;
         SceneManager.LoadScene("Web_Puzzle");
+    }
+
+    public void EndTheGame()
+    {
+        Application.Quit();
     }
 }
