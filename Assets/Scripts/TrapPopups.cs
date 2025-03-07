@@ -8,8 +8,11 @@ public class TrapPopups : MonoBehaviour
 
     public Canvas canvas;
     public Canvas trapCanvas;
+    public Canvas winScreen;
     public TMP_Text text;
     public Rigidbody roof;
+    public Camera playerCam;
+    public Canvas midWinScreen;
 
     bool inTrap = false;
     public int trapID;
@@ -20,10 +23,12 @@ public class TrapPopups : MonoBehaviour
     void Start()
     {
         trapMesh = GetComponent<MeshRenderer>();
+        text.text = "Setup Trap? Press Space";
         trapMesh.enabled = false;
         canvas.enabled = false;
         trapCanvas.enabled = false;
-        
+        winScreen.enabled = false;
+        midWinScreen.enabled = false;
     }
 
     private void Update()
@@ -38,8 +43,16 @@ public class TrapPopups : MonoBehaviour
                 PlayerLocation.traps[7] &&
                 PlayerLocation.traps[8] && 
                 PlayerLocation.traps[9])
-            text.text = "Congrats! You finished the game! Did you do well? You got all of the right!";
-        };
+            {
+                winScreen.enabled = true;
+                playerCam.transform.position = new Vector3(0, 72, 42);
+            }
+            else
+            {
+                midWinScreen.enabled = true;
+                playerCam.transform.position = new Vector3(0, 72, 42);
+            }
+        }
 
         if (PlayerLocation.traps[trapID])
         {
