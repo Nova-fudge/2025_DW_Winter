@@ -33,6 +33,9 @@ public class TrapPopups : MonoBehaviour
             trapMesh.enabled = true;
         }
 
+        if (PlayerLocation.gameOver)
+            canvas.enabled = false;
+
         if (PlayerLocation.traps[trapID])
             return;
 
@@ -58,9 +61,6 @@ public class TrapPopups : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (PlayerLocation.gameOver)
-            return;
-
         if (PlayerLocation.traps[trapID])
             text.text = "You have already placed a trap here!";
         else
@@ -68,6 +68,9 @@ public class TrapPopups : MonoBehaviour
 
         canvas.enabled = true;
         inTrap = true;
+
+        if (PlayerLocation.gameOver)
+            canvas.enabled = false;
     }
 
     void OnTriggerExit(Collider collider)

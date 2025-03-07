@@ -8,6 +8,8 @@ public class Ending : MonoBehaviour
     public Canvas midWinScreen;
     public Camera endCamera;
 
+    public GameObject ceiling;
+
     private void Start()
     {
         winScreen.enabled = false;
@@ -40,6 +42,7 @@ public class Ending : MonoBehaviour
                 midWinScreen.enabled = true;
 
             endCamera.enabled = true;
+            Destroy(ceiling);
         }
     }
 }

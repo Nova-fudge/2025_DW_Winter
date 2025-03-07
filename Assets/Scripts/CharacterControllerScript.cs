@@ -25,6 +25,9 @@ public class CharacterControllerScript : MonoBehaviour
 
     public Camera playerCamera;
 
+    public AudioSource walkSFX;
+    bool isWalking = false;
+
     void Awake()
     {
         if (Instance != null)
@@ -63,6 +66,19 @@ public class CharacterControllerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             controller.Move(move * speed * runningSpeed * Time.deltaTime);
+        }
+
+        if (x != 0 || z != 0)
+        {
+            if (isWalking)
+                return;
+            walkSFX.Play();
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+            walkSFX.Stop();
         }
     }
 }
