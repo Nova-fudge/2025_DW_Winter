@@ -12,6 +12,8 @@ public class Combat_Mover : MonoBehaviour
 
     public bool isStationary = false;
 
+    public AudioSource audio;
+
     private void OnMouseDrag()
     {
         if (isStationary)
@@ -42,6 +44,7 @@ public class Combat_Mover : MonoBehaviour
 
     private void OnMouseUp()
     {
+        audio.Play();
         placed = true;
         if (!overEndPoint || cardCollision)
             transform.position = startPos.position;
