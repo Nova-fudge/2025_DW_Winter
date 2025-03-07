@@ -23,6 +23,8 @@ public class CharacterControllerScript : MonoBehaviour
 
     private Vector3 previousPlayerPos;
 
+    public Camera playerCamera;
+
     void Awake()
     {
         if (Instance != null)
@@ -40,6 +42,10 @@ public class CharacterControllerScript : MonoBehaviour
 
     void Update()
     {
+        playerCamera.enabled = !PlayerLocation.inTrap;
+
+        Debug.Log(PlayerLocation.sliderDone);
+
         Debug.Log("Holder is " + previousPlayerPos);
         if (hasRun == false)
         {

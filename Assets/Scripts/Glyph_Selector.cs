@@ -12,6 +12,9 @@ public class Glyph_Selector : MonoBehaviour
 
     public Canvas winScreen;
 
+    bool puzzleSolved = false;
+    public Camera trapCamera;
+
     void Start()
     {
         winScreen.enabled = false;
@@ -36,6 +39,13 @@ public class Glyph_Selector : MonoBehaviour
             currentIndex[6] == 15)
         {
             winScreen.enabled = true;
+
+            if (puzzleSolved)
+                return;
+            puzzleSolved = true;
+            trapCamera.enabled = false;
+            PlayerLocation.enterExitTrap();
+            PlayerLocation.DoneGlyphs();
         }
     }
 

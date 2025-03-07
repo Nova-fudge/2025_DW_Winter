@@ -18,6 +18,9 @@ public class Slider_Score : MonoBehaviour
     public Canvas winScreen;
     public TextMeshProUGUI winBarks;
 
+    bool puzzleSolved = false;
+    public Camera trapCamera;
+
     void Start()
     {
         winScreen.enabled = false;
@@ -50,6 +53,13 @@ public class Slider_Score : MonoBehaviour
                 winBarks.text = "Good job!";
             else if (movesUsed > moveTarget)
                 winBarks.text = "You solved the puzzle.";
+
+            if (puzzleSolved)
+                return;
+            puzzleSolved = true;
+            trapCamera.enabled = false;
+            PlayerLocation.enterExitTrap();
+            PlayerLocation.DoneSlider();
         }
 
         movesDisplay.text = "Moves used: " + movesUsed.ToString();

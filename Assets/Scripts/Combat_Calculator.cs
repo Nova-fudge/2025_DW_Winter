@@ -26,6 +26,9 @@ public class Combat_Calculator : MonoBehaviour
 
     public Canvas winScreen;
 
+    bool puzzleSolved = false;
+    public Camera trapCamera;
+
     private void Start()
     {
         winScreen.enabled = false;
@@ -83,6 +86,15 @@ public class Combat_Calculator : MonoBehaviour
 
         //WIN CONDITION HERE.
         if (topRow == topTarget && botRow == botTarget)
+        {
             winScreen.enabled = true;
+
+            if (puzzleSolved)
+                return;
+            puzzleSolved = true;
+            trapCamera.enabled = false;
+            PlayerLocation.enterExitTrap();
+            PlayerLocation.DoneCombat();
+        }
     }
 }

@@ -26,6 +26,9 @@ public class Wire_Counter : MonoBehaviour
 
     public Canvas winScreen;
 
+    bool puzzleSolved = false;
+    public Camera trapCamera;
+
     private void Start()
     {
         chosenTarget = Random.Range(0, 3);
@@ -112,6 +115,12 @@ public class Wire_Counter : MonoBehaviour
         {
             Debug.Log("SUCCESS");
             winScreen.enabled = true;
+            if (puzzleSolved)
+                return;
+            puzzleSolved = true;
+            trapCamera.enabled = false;
+            PlayerLocation.enterExitTrap();
+            PlayerLocation.DoneWires();
         }
 
     }

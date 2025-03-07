@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.1981132, g: 0.15034388, b: 0.08690815, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -5321,6 +5321,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Scene_Switcher, Assembly-CSharp
         m_MethodName: GoToCombatPuzzle
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2121243839}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13293,6 +13305,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2121243839}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &970065398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13718,18 +13742,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1692536690}
-        m_TargetAssemblyTypeName: Scene_Switcher, Assembly-CSharp
-        m_MethodName: PlayerLastLocation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2121243840}
         m_TargetAssemblyTypeName: Scene_Switcher, Assembly-CSharp
         m_MethodName: GoToSliderPuzzle
@@ -17693,6 +17705,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Scene_Switcher, Assembly-CSharp
         m_MethodName: GoToCipherPuzzle
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2121243839}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24544,6 +24568,7 @@ MonoBehaviour:
   canvas: {fileID: 1900749596}
   respawnBox: {fileID: 1919908586}
   dontDestroy: {fileID: 1931825840}
+  playerCamera: {fileID: 963194227}
 --- !u!143 &1692536689
 CharacterController:
   m_ObjectHideFlags: 0
@@ -24582,6 +24607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8c75ca918d4e245937b5be61223947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doneSlider: 0
+  doneCombat: 0
+  doneCipher: 0
+  doneWire: 0
+  doneWeb: 0
 --- !u!1 &1696328598
 GameObject:
   m_ObjectHideFlags: 0
@@ -29820,6 +29850,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2121243839}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027863222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31091,6 +31133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8c75ca918d4e245937b5be61223947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doneSlider: 0
+  doneCombat: 0
+  doneCipher: 0
+  doneWire: 0
+  doneWeb: 0
 --- !u!4 &2121243841
 Transform:
   m_ObjectHideFlags: 0

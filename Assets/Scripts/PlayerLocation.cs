@@ -6,4 +6,42 @@ public class PlayerLocation
 {
     public Vector3 previousPlayerTransform { get; set; }
 
+    public static bool inTrap = false;
+
+    public static bool sliderDone = false;
+    public static bool combatDone = false;
+    public static bool webDone = false;
+    public static bool wiresDone = false;
+    public static bool glyphsDone = false;
+
+    public static void DoneSlider()
+    {
+        Debug.Log("slider done");
+        sliderDone = true;
+    }
+
+    public static void DoneCombat()
+    {
+        combatDone = true;
+    }
+
+    public static void DoneWeb()
+    {
+        webDone = true;
+    }
+
+    public static void DoneWires()
+    {
+        wiresDone = true;
+    }
+
+    public static void DoneGlyphs()
+    {
+        glyphsDone = true;
+    }
+
+    public static void enterExitTrap()
+    {
+        inTrap = !inTrap;
+    }
 }

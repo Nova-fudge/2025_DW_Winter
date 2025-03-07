@@ -17,6 +17,8 @@ public class Web_Check : MonoBehaviour
     public Material happyLine;
 
     public Canvas winScreen;
+    bool puzzleSolved = false;
+    public Camera trapCamera;
 
     private void Start()
     {
@@ -47,6 +49,12 @@ public class Web_Check : MonoBehaviour
         {
             lineMat.material = happyLine;
             winScreen.enabled = true;
+            if (puzzleSolved)
+                return;
+            puzzleSolved = true;
+            trapCamera.enabled = false;
+            PlayerLocation.enterExitTrap();
+            PlayerLocation.DoneWeb();
         }
     }
 }
