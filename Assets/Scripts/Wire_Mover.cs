@@ -6,8 +6,16 @@ public class Wire_Mover : MonoBehaviour
 {
     public Transform startPos;
 
+    public List<AudioClip> spark;
+    AudioSource audio;
+
     public bool overEndPoint;
     public bool wireCollision = false;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     private void OnMouseDrag()
     {
@@ -35,6 +43,10 @@ public class Wire_Mover : MonoBehaviour
 
     private void OnMouseUp()
     {
+        int audioID = Random.Range(0, 4);
+        audio.clip = spark[audioID];
+        audio.Play();
+
         if (!overEndPoint || wireCollision)
             transform.position = startPos.position;
     }
