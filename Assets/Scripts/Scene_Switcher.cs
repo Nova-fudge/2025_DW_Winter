@@ -10,14 +10,9 @@ public class Scene_Switcher : MonoBehaviour
     public bool doneWire;
     public bool doneWeb;
 
-    public GameObject boxCollider;
-    public GameObject boxCollider1;
-    public GameObject boxCollider2;
-    public GameObject boxCollider3;
-    public GameObject boxCollider4;
-    public GameObject boxCollider5;
     public void GoToMaze()
     {
+        PlayerLocation.trapPlaced();
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         Time.timeScale = 1;
@@ -28,13 +23,11 @@ public class Scene_Switcher : MonoBehaviour
     {
         if (PlayerLocation.sliderDone)
             return;
-
         PlayerLocation.enterExitTrap();
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         Time.timeScale = 1;
         doneSlider = true;
-        
         SceneManager.LoadScene("Slide_Puzzle");
     }
 

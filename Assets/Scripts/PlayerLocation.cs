@@ -14,6 +14,10 @@ public class PlayerLocation
     public static bool wiresDone = false;
     public static bool glyphsDone = false;
 
+    public static int currentIndex = -1;
+    public static bool[] traps = new bool[10];
+
+
     public static void DoneSlider()
     {
         Debug.Log("slider done");
@@ -43,5 +47,15 @@ public class PlayerLocation
     public static void enterExitTrap()
     {
         inTrap = !inTrap;
+    }
+
+    public static void chosenTrapNumber(int index)
+    {
+        currentIndex = index;
+    }
+
+    public static void trapPlaced()
+    {
+        traps[currentIndex] = true;
     }
 }

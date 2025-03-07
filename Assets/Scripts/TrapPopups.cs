@@ -7,6 +7,7 @@ public class TrapPopups : MonoBehaviour
     public Canvas trapCanvas;
 
     bool inTrap = false;
+    public int trapID;
 
     // if this script is on an object with a collider display the Gui
     void Start()
@@ -17,8 +18,12 @@ public class TrapPopups : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerLocation.traps[trapID])
+            return;
+
         if (Input.GetKeyDown(KeyCode.Space) && inTrap)
         {
+            PlayerLocation.chosenTrapNumber(trapID);
             canvas.enabled = false;
             trapCanvas.enabled = true;
             Cursor.lockState = CursorLockMode.Confined;

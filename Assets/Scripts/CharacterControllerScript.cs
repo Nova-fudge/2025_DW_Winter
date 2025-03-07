@@ -64,6 +64,5 @@ public class CharacterControllerScript : MonoBehaviour
         {
             controller.Move(move * speed * runningSpeed * Time.deltaTime);
         }
-
     }
 }

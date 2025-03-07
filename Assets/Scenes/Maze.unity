@@ -3787,6 +3787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 8
 --- !u!1 &290239946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,6 +5670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 5
 --- !u!1001 &508710201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7656,6 +7658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 0
 --- !u!1 &660639049
 GameObject:
   m_ObjectHideFlags: 0
@@ -9105,6 +9108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 4
 --- !u!1001 &754994014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16725,6 +16729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 9
 --- !u!1 &1143682464
 GameObject:
   m_ObjectHideFlags: 0
@@ -16887,6 +16892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 1
 --- !u!1 &1149793865
 GameObject:
   m_ObjectHideFlags: 0
@@ -19969,6 +19975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 2
 --- !u!1 &1368424559
 GameObject:
   m_ObjectHideFlags: 0
@@ -24438,6 +24445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 7
 --- !u!1 &1692536682
 GameObject:
   m_ObjectHideFlags: 0
@@ -24680,6 +24688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 6
 --- !u!1 &1703681402
 GameObject:
   m_ObjectHideFlags: 0
@@ -26550,6 +26559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1900749596}
   trapCanvas: {fileID: 456125727}
+  trapID: 3
 --- !u!1001 &1803841610
 PrefabInstance:
   m_ObjectHideFlags: 0
