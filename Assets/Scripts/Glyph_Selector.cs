@@ -15,6 +15,8 @@ public class Glyph_Selector : MonoBehaviour
     bool puzzleSolved = false;
     public Camera trapCamera;
 
+    public AudioSource audio;
+
     void Start()
     {
         winScreen.enabled = false;
@@ -51,6 +53,7 @@ public class Glyph_Selector : MonoBehaviour
 
     public void nextImage(int index)
     {
+        audio.Play();
         if (currentIndex[index] == glyphList.Count - 1)
             currentIndex[index] = -1;
         currentIndex[index] += 1;
@@ -59,6 +62,7 @@ public class Glyph_Selector : MonoBehaviour
 
     public void previousImage(int index)
     {
+        audio.Play();
         if (currentIndex[index] == 0)
             currentIndex[index] = glyphList.Count;
         currentIndex[index] -= 1;
