@@ -19,7 +19,7 @@ public class Ending : MonoBehaviour
             PlayerLocation.glyphsDone &&
             PlayerLocation.combatDone)
         {
-
+            PlayerLocation.endGame();
         }
     }
 }

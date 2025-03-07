@@ -16,7 +16,7 @@ public class PlayerLocation
 
     public static int currentIndex = -1;
     public static bool[] traps = new bool[10];
-
+    public static bool gameOver = false;
 
     public static void DoneSlider()
     {
@@ -57,5 +57,10 @@ public class PlayerLocation
     public static void trapPlaced()
     {
         traps[currentIndex] = true;
+    }
+
+    public static void endGame()
+    {
+        gameOver = true;
     }
 }
