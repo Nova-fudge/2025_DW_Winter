@@ -118,8 +118,6 @@ public class Wire_Counter : MonoBehaviour
             if (puzzleSolved)
                 return;
             puzzleSolved = true;
-            trapCamera.enabled = false;
-            PlayerLocation.enterExitTrap();
             PlayerLocation.DoneWires();
         }
 

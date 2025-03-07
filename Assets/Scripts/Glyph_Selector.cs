@@ -45,8 +45,6 @@ public class Glyph_Selector : MonoBehaviour
             if (puzzleSolved)
                 return;
             puzzleSolved = true;
-            trapCamera.enabled = false;
-            PlayerLocation.enterExitTrap();
             PlayerLocation.DoneGlyphs();
         }
     }

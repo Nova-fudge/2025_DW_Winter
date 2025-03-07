@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Ending : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Canvas winScreen;
+    public Canvas midWinScreen;
+    public Camera endCamera;
+
+    private void Start()
     {
-        
+        winScreen.enabled = false;
+        midWinScreen.enabled = false;
+        endCamera.enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (PlayerLocation.sliderDone &&
@@ -20,6 +24,22 @@ public class Ending : MonoBehaviour
             PlayerLocation.combatDone)
         {
             PlayerLocation.endGame();
+        }
+
+        if (PlayerLocation.gameOver)
+        {
+            if (PlayerLocation.traps[4] &&
+                PlayerLocation.traps[2] &&
+                PlayerLocation.traps[7] &&
+                PlayerLocation.traps[8] &&
+                PlayerLocation.traps[5])
+            {
+                winScreen.enabled = true;
+            }
+            else
+                midWinScreen.enabled = true;
+
+            endCamera.enabled = true;
         }
     }
 }

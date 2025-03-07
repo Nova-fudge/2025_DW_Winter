@@ -52,8 +52,6 @@ public class Web_Check : MonoBehaviour
             if (puzzleSolved)
                 return;
             puzzleSolved = true;
-            trapCamera.enabled = false;
-            PlayerLocation.enterExitTrap();
             PlayerLocation.DoneWeb();
         }
     }
